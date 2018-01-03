@@ -7,6 +7,72 @@
     <link rel="stylesheet" href="index.css">
      <link rel="stylesheet" href="bootstrap.css">
      <link rel="stylesheet" href="style2.css">
+    <style type="text/css">
+        *{margin: 0;padding: 0;}
+		a{text-decoration: none;display: none;}
+    
+    .btn{
+			width: 50px;
+			height: 30px;
+            padding: 2px;
+        }
+        
+        .msg_blck{
+			width: 100%;
+			height: 100%;
+			/*opacity: 0.5;继承*/
+			background: rgba(0,0,0,0.5);
+			position: fixed;
+			top: 0px;
+			left: 0px;
+			display: none;
+		}
+
+		.msg_cont{
+			width: 1000px;
+			height: 1000px;
+			position: absolute;
+			left: 50%;
+			top: 50%;
+			margin-top: -350px;
+			margin-left: -450px;
+			background: #fff;
+			text-align: center;
+		}
+
+		.closeBtn{
+			display: block;
+			margin-left: 950px;
+			margin-top: 10px;
+			font-size: 30px;
+			color: #aaa;
+		}
+
+		.tarea{
+			width: 1000px;
+			height: 1000px;
+			border: 1px solid #aaa;
+			margin: 5px auto;
+			display: block;
+		}
+        	#header{
+				width: 1000px;
+				height: 50px;
+				border-bottom: 3px solid #ccc;
+				
+			}
+			table{
+				width: 800px;
+				margin-top: 20px;
+				border-spacing: 0;
+			}
+			td{
+				text-align: center;
+				height: 30px;
+			}
+    </style>
+    <script type="text/javascript" src="jquery-2.1.3.min.js">
+	</script>
    
     </head>
     <body>
@@ -20,8 +86,8 @@
             <div class="layout">
                 <i class="icon"></i>
                 <div class="txt">
-                    <h3><font color="#fff" size="5px">当前图书&nbsp;&nbsp;<a href="2.html">  
-                   <font color="#fff" size="5px">查询</font></a></font></h3>
+                    <h3><font color="#fff" size="5px">当前图书&nbsp;&nbsp;</font>
+                    <button class="btn">查询</button></h3>
                 </div>
                 </div>
             </article>
@@ -30,7 +96,8 @@
             <div class="layout">
                 <i class="icon"></i>
                 <div class="txt">
-                    <h3><font color="#000" size="5px">当前图书&nbsp;&nbsp;<a href="3.html"><font color="#000">录入</font></a></font></h3>
+                    <h3><font color="#000" size="5px">当前图书&nbsp;&nbsp;</font>
+                    <button class="btn">录入</button></h3>
                    
                 </div>
                 </div>
@@ -40,7 +107,8 @@
             <div class="layout">
                 <i class="icon"></i>
                 <div class="txt">
-                <h3><font color="#fff" size="5px">当前图书&nbsp;&nbsp;<a href="1.html"><font color="#fff">删除</font></a></font></h3>
+                <h3><font color="#fff" size="5px">当前图书&nbsp;&nbsp;</font>
+                    <button class="btn">删除</button></h3>
                    
                 </div>
                 </div>
@@ -50,36 +118,126 @@
              <div class="layout">
                 <i class="icon"></i>
                 <div class="txt">
-                    <h3><font color="#000" size="5px">当前图书&nbsp;&nbsp;<a href="1.html"><font color="#000">浏览</font></a></font></h3>
+                    <h3><font color="#000" size="5px">当前图书&nbsp;&nbsp;</font>
+                    <button class="btn">浏览</button></h3>
                     
                 </div>
                 </div>
             </article>
         </section>
-        <div id="div1"> 
-            <textarea id="text" ></textarea><br>
-            <button onclick="sub()" id="submit">确认发布 </button>
-        </div>
+        
+        <div class="msg_blck">
+		<div class="msg_cont">
+			<a class="closeBtn" href="#">X</a>
+            
+            		<div id="header">
+			书名：<input type="text" id="shuming" /> 
+			作者名:<input type="text" id="zuozhe" /> 
+			总库存：<input type="text" id="kucun" />
+            出版社：<input type="text" id="chubanshe" />
+            单价：<input type="text" id="danjia" />
+			<input type="button" id="addUser" value="添加图书"/>
+		</div>
+		<table border="1" cellspacing="0" cellpadding="">
+			<thead>
+			<tr>
+				<th>书名</th>
+				<th>作者名</th>
+				<th>总库存</th>
+                <th>出版社</th>
+                <th>单价</th>
+				<th>操作</th>
+			</tr>
+			</thead>
+            
+			<tbody>
+			<tr>
+            <td>《HTML5和CSS3权威指南》</td>   
+            <td>陆凌牛</td>
+            <td>300</td>
+            <td>机械工业出版社区</td>
+            <td>35￥</td>
+				<td>
+					<button id="deleatUser" class="but">删除</button>
+				</td>
+			</tr>
+            <tr>
+            <td>《Unity3D》</td>   
+            <td>胡一天</td>
+            <td>350</td>
+            <td>人民邮电出版社</td>
+            <td>60￥</td>
+				<td>
+					<button id="deleatUser" class="but">删除</button>
+				</td>
+			</tr>
+            <tr>
+            <td>《PS设计入门》</td>   
+            <td>李仁</td>
+            <td>350</td>
+            <td>清华大学出版社</td>
+            <td>45￥</td>
+				<td>
+					<button id="deleatUser" class="but">删除</button>
+				</td>
+			</tr>
+                
+           
+			</tbody>
+            
+		</table>
+            
+			
+		</div>
 
-        <script>
-          window.onload = function(){
-               document.getElementById("text").style.visibility="hidden";
-               document.getElementById("submit").style.visibility="hidden";
-           }
-           function add(){
-               document.getElementById("text").style.visibility="visible";
-               document.getElementById("submit").style.visibility="visible";
-           }
-           function sub(){
-            var nP = document.createElement("p");
-            var oInput = document.getElementById("text");
-            nP.innerHTML = oInput.value;
-            oInput.value = "";
-            var parentDiv = document.getElementById("msg");
-            parentDiv.appendChild(nP);
-            parentDiv.scrollTop = 9999;
-            }
+	</div>
+<script type="text/javascript">
+//	//发表留言事件
+	$(".btn").click(function(){
+		$(".msg_blck").show(500);
+	})
+	//	//关闭按钮
+	$(".closeBtn").click(function(){
+		$(".msg_blck").hide(500);
+	})
+	$("li a").click(function(){
+		$(this).parent().parent().remove();
+	})
+//	//确认发布事件
+$("#confirmBtn").click(function(){
+	//检测文本值
+	if($("#tarea").val()==""){
+		alert("文本值为空");
+			return;
+	}
+	var $oLi=$(".msg:first").clone(true);
+	$(".list").append($oLi);
+	$(".msg_blck").hide(500);
+	//修改日期
+	$oLi.children(".date").children("p").html(new Date().toLocaleDateString());
+	$("#tarea").val("");
+})
+</script>
+    <script type="text/javascript">
+$("#addUser").click(function(){
+	    var $new_tr= $("tbody tr:first").clone(true);
+		$new_tr.children("td:first").html($("#shuming").val());
+		$new_tr.children("td:eq(1)").html($("#zuozhe").val());
+		$new_tr.children("td:eq(2)").html($("#kucun").val());
+        $new_tr.children("td:eq(3)").html($("#chubanshe").val());
+        $new_tr.children("td:eq(4)").html($("#danjia").val());
+		$new_tr.appendTo("tbody");
+		$("input:text").val("");
+});
+$("#deleatUser").click(fun);
+function fun(){
+	$(this).parent().parent().remove();
+}
 
-        </script>
+</script>
+        
+
+       
     </body>
 </html>
+
