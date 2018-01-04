@@ -16,8 +16,34 @@
 			height: 30px;
             padding: 2px;
         }
+        .btn1{
+            width: 50px;
+			height: 30px;
+            padding: 1px;
+            margin-left: 1700px;
+        }
         
         .msg_blck{
+			width: 100%;
+			height: 100%;
+			/*opacity: 0.5;继承*/
+			background: rgba(0,0,0,0.5);
+			position: fixed;
+			top: 0px;
+			left: 0px;
+			display: none;
+		}
+        .msg_blck1{
+			width: 100%;
+			height: 100%;
+			/*opacity: 0.5;继承*/
+			background: rgba(0,0,0,0.5);
+			position: fixed;
+			top: 0px;
+			left: 0px;
+			display: none;
+		}
+        .msg_blck2{
 			width: 100%;
 			height: 100%;
 			/*opacity: 0.5;继承*/
@@ -39,6 +65,28 @@
 			background: #fff;
 			text-align: center;
 		}
+        .msg_cont1{
+			width: 1000px;
+			height: 1000px;
+			position: absolute;
+			left: 50%;
+			top: 50%;
+			margin-top: -350px;
+			margin-left: -450px;
+			background: #fff;
+			text-align: center;
+		}
+         .msg_cont2{
+			width: 1000px;
+			height: 1000px;
+			position: absolute;
+			left: 50%;
+			top: 50%;
+			margin-top: -350px;
+			margin-left: -450px;
+			background: #fff;
+			text-align: center;
+		}
 
 		.closeBtn{
 			display: block;
@@ -47,7 +95,20 @@
 			font-size: 30px;
 			color: #aaa;
 		}
-
+        .closeBtn1{
+			display: block;
+			margin-left: 950px;
+			margin-top: 10px;
+			font-size: 30px;
+			color: #aaa;
+		}
+        .closeBtn2{
+			display: block;
+			margin-left: 950px;
+			margin-top: 10px;
+			font-size: 30px;
+			color: #aaa;
+		}
 		.tarea{
 			width: 1000px;
 			height: 1000px;
@@ -77,17 +138,16 @@
     </head>
     <body>
         <section id="whatwedo" class="whatwedo sectioner clearfix">
-            <h1 class="sectionHeader">图书管理系统&nbsp;&nbsp;&nbsp;&nbsp;<a><font color="000" size="4px">登录</font></a>
-                
-            <a><font color="000" size="4px">注册</font></a>
-            </h1>
+            <h1 class="sectionHeader">图书管理系统&nbsp;&nbsp;&nbsp;&nbsp;</h1><button class="btn1">登录</button>
+            <button class="btn2">注册</button>
+            
             
             <article class="whatwedo-item front-end">
             <div class="layout">
                 <i class="icon"></i>
                 <div class="txt">
                     <h3><font color="#fff" size="5px">当前图书&nbsp;&nbsp;</font>
-                    <button class="btn">查询</button></h3>
+                    <button class="btn3">查询</button></h3>
                 </div>
                 </div>
             </article>
@@ -97,7 +157,7 @@
                 <i class="icon"></i>
                 <div class="txt">
                     <h3><font color="#000" size="5px">当前图书&nbsp;&nbsp;</font>
-                    <button class="btn">录入</button></h3>
+                    <button class="btn4">录入</button></h3>
                    
                 </div>
                 </div>
@@ -119,12 +179,123 @@
                 <i class="icon"></i>
                 <div class="txt">
                     <h3><font color="#000" size="5px">当前图书&nbsp;&nbsp;</font>
-                    <button class="btn">浏览</button></h3>
+                    <button class="btn3">浏览</button></h3>
                     
                 </div>
                 </div>
             </article>
         </section>
+        
+        <div class="msg_blck1">
+		<div class="msg_cont1">
+			<a class="closeBtn1" href="#">X</a>
+            
+		<table border="1" cellspacing="0" cellpadding="">
+			<thead>
+			<tr>
+				<th>书名</th>
+				<th>作者名</th>
+				<th>总库存</th>
+                <th>出版社</th>
+                <th>单价</th>
+			</tr>
+			</thead>
+            
+			<tbody>
+			<tr>
+            <td>《HTML5和CSS3权威指南》</td>   
+            <td>陆凌牛</td>
+            <td>300</td>
+            <td>机械工业出版社区</td>
+            <td>35￥</td>
+			</tr>
+            <tr>
+            <td>《Unity3D》</td>   
+            <td>胡一天</td>
+            <td>350</td>
+            <td>人民邮电出版社</td>
+            <td>60￥</td>
+			</tr>
+            <tr>
+            <td>《PS设计入门》</td>   
+            <td>李仁</td>
+            <td>350</td>
+            <td>清华大学出版社</td>
+            <td>45￥</td>
+			</tr>
+            <tr>
+            <td>《面向对象编程指南》</td>   
+            <td>牛津</td>
+            <td>350</td>
+            <td>人民邮电出版社</td>
+            <td>36￥</td>
+			</tr>
+            <tr>
+            <td>《大学计算机基础》</td>   
+            <td>王舜杰</td>
+            <td>350</td>
+            <td>东软出版社</td>
+            <td>36￥</td>
+			</tr>
+            <tr>
+            <td>《线性代数练习题》</td>   
+            <td>张杰</td>
+            <td>350</td>
+            <td>人电子工程出版社</td>
+            <td>23￥</td>
+			</tr>
+            <tr>
+             <td>《就业指南》</td>   
+            <td>王伟明</td>
+            <td>350</td>
+            <td>人民邮电出版社</td>
+            <td>36￥</td>
+                </tr>
+           
+			</tbody>
+            
+		</table>
+            
+			
+		</div>
+
+	</div>
+        
+                <div class="msg_blck2">
+		<div class="msg_cont2">
+			<a class="closeBtn2" href="#">X</a>
+            
+            		<div id="header">
+			书名：<input type="text" id="shuming" /> 
+			作者名:<input type="text" id="zuozhe" /> 
+			总库存：<input type="text" id="kucun" />
+            出版社：<input type="text" id="chubanshe" />
+            单价：<input type="text" id="danjia" />
+			<input type="button" id="addUser" value="添加图书"/>
+		</div>
+		<table border="1" cellspacing="0" cellpadding="">
+			<thead>
+			<tr>
+				<th>书名</th>
+				<th>作者名</th>
+				<th>总库存</th>
+                <th>出版社</th>
+                <th>单价</th>
+			</tr>
+			</thead>
+            
+			<tbody>
+			
+			</tbody>
+            
+		</table>
+            
+			
+		</div>
+
+	</div>
+        
+        
         
         <div class="msg_blck">
 		<div class="msg_cont">
@@ -161,28 +332,6 @@
 					<button id="deleatUser" class="but">删除</button>
 				</td>
 			</tr>
-            <tr>
-            <td>《Unity3D》</td>   
-            <td>胡一天</td>
-            <td>350</td>
-            <td>人民邮电出版社</td>
-            <td>60￥</td>
-				<td>
-					<button id="deleatUser" class="but">删除</button>
-				</td>
-			</tr>
-            <tr>
-            <td>《PS设计入门》</td>   
-            <td>李仁</td>
-            <td>350</td>
-            <td>清华大学出版社</td>
-            <td>45￥</td>
-				<td>
-					<button id="deleatUser" class="but">删除</button>
-				</td>
-			</tr>
-                
-           
 			</tbody>
             
 		</table>
@@ -191,6 +340,42 @@
 		</div>
 
 	</div>
+        
+    
+        
+        <script type="text/javascript">
+   //发表留言事件
+	$(".btn3").click(function(){
+		$(".msg_blck1").show(500);
+	})
+	//	//关闭按钮
+	$(".closeBtn1").click(function(){
+		$(".msg_blck1").hide(500);
+	})
+	$("li a").click(function(){
+		$(this).parent().parent().remove();
+	})
+
+</script>
+    
+     
+  <script type="text/javascript">
+   //发表留言事件
+	$(".btn4").click(function(){
+		$(".msg_blck2").show(500);
+	})
+	//	//关闭按钮
+	$(".closeBtn2").click(function(){
+		$(".msg_blck2").hide(500);
+	})
+	$("li a").click(function(){
+		$(this).parent().parent().remove();
+	})
+
+</script>       
+        
+        
+        
 <script type="text/javascript">
 //	//发表留言事件
 	$(".btn").click(function(){
@@ -233,7 +418,6 @@ $("#deleatUser").click(fun);
 function fun(){
 	$(this).parent().parent().remove();
 }
-
 </script>
         
 
