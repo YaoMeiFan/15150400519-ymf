@@ -1,112 +1,94 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
+ <meta charset="UTF-8">
+ <title>图书管理系统注册界面</title>
+ <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
+<style>
+     *{
+ margin: 0;
+ padding: 0;
+ font-size: 12px;
+}
+    .box{
+ width: 390px;
+ height: 320px;
+ border: solid 1px #ddd;
+ background: #FFF;
+ position: absolute;
+ left: 50%;
+ top:42%;
+ margin-left: -195px;
+ margin-top: -160px;
+ text-align: center;
+}
+    .box h2{
+ font-weight: normal;
+ color:#000;
+ font-size: 25px;
+ line-height: 40px;
+ overflow: hidden;
+ text-align: center;
+ border-bottom: solid 3px #ddd;
+ background: #f7f7f7;
+}
+    .input_box{
+ width:350px;
+ padding-bottom: 20px;
+ margin: 0 auto;
+ overflow: hidden;
+}
     
-    <title>查询</title>
-    <style>
-   
     </style>
     </head>
-     <body>
-            <a href="1.html">返回</a>
-            <div id="msg"> 
-             <table bordercolor="black"  width="1600" height="500" cellpadding="20px" cellspacing="1" >
-        <tr  height="1px">
-            <td colspan="1"><font color="656161">图书号</font></td>
-            <td><font color="656161">书名</font></td>
-            <td colspan="1"><font color="656161">作者</font></td>
-            <td><font color="656161">出版社</font></td>
-            <td align="center"><font color="656161">总库存</font></td>
-        </tr>
-        <tr>
-            <td>1001</td>
-            <td>《HTML5和CSS3权威指南》</td>   
-            <td>陆凌牛</td>
-            <td>机械工业出版社区</td>
-            <td align="center">300</td>
-                
-        </tr>
-        <tr>
-            <td>1002</td>
-            <td>《Unity3D》</td>   
-            <td>胡一天</td>
-            <td>人民邮电出版社</td>
-            <td align="center">662</td>
-                
-        </tr>
-         <tr>
-            <td>1003</td>
-            <td>《PS设计入门》</td>   
-            <td>李仁</td>
-            <td>清华大学出版社</td>
-            <td align="center">220</td>
-                
-        </tr>
-        <tr>
-            <td>1004</td>
-            <td>《日语二级》</td>   
-            <td>李嗯嗯</td>
-            <td>外研社</td>
-            <td align="center">300</td>
-                
-        </tr>
-        <tr>
-            <td>1005</td>
-            <td>《日语会话》</td>   
-            <td>王念</td>
-            <td>外研社</td>
-            <td align="center">60</td>
-                
-        </tr>
-        <tr>
-            <td>1006</td>
-            <td>《C语言程序》</td>   
-            <td>张赢</td>
-            <td>东软出版社</td>
-            <td align="center">397</td>
-                
-        </tr>
-        <tr>
-            <td>1007</td>
-            <td>《面向对象编程指南》</td>   
-            <td>牛津</td>
-            <td>人民邮电出版社</td>
-            <td align="center">300</td>
-                
-        </tr>
-        <tr>
-            <td>1008</td>
-            <td>《大学计算机基础》</td>   
-            <td>王舜杰</td>
-            <td>东软出版社</td>
-            <td align="center">256</td>
-                
-        </tr>
-        <tr>
-            <td>1009</td>
-            <td>《线性代数练习题》</td>   
-            <td>张杰</td>
-            <td>人电子工程出版社</td>
-            <td align="center">500</td>
-                
-        </tr>
-        <tr>
-            <td>1010</td>
-            <td>《就业指南》</td>   
-            <td>王伟明</td>
-            <td>人民邮电出版社</td>
-            <td align="center">400</td>
-                
-        </tr>
-                
-     </table>
-         </div>
-
-       
-         
-        
-    
+    <body>
+    <div class="box">
+        <h2>图书管理系统--注册</h2>
+        <div class="input_box">
+  <input id="uname" type="text" name="user" placeholder="请输入用户名">
+ </div>
+ <div class="input_box">
+  <input id="upass" type="password" name="psw" placeholder="请输入密码">
+ </div>
+ <div class="input_box">
+  <input id="ueam" type="email" name="em" placeholder="请输入邮箱">
+ </div>
+        <div id="error_box"><br></div>
+ <div class="input_box">
+  <button type="button" class="btn btn-primary" onclick="fnLogin()">注册</button>    
+ </div></div>
+        <script>
+    function fnLogin() {
+ var oUname = document.getElementById("uname")
+ var oUpass = document.getElementById("upass")
+ var oUeam = document.getElementById("ueam")
+ var oError = document.getElementById("error_box")
+ var isError = true;
+ if (oUname.value.length > 20 || oUname.value.length < 6) {
+  oError.innerHTML = "用户名请输入6-20位字符";
+  isError = false;
+  return;
+ }else if((oUname.value.charCodeAt(0)>=48) && (oUname.value.charCodeAt(0)<=57)){
+  oError.innerHTML = "首字符必须为字母";
+  return;
+ }else for(var i=0;i<oUname.value.charCodeAt(i);i++){
+  if((oUname.value.charCodeAt(i)<48)||(oUname.value.charCodeAt(i)>57) && (oUname.value.charCodeAt(i)<97)||(oUname.value.charCodeAt(i)>122)){
+   oError.innerHTML = "必须为字母跟数字组成";
+   return;
+  }
+ }
+ 
+ if (oUpass.value.length > 20 || oUpass.value.length < 6) {
+  oError.innerHTML = "密码请输入6-20位字符"
+  isError = false;
+  return;
+ }
+  if (oUeam.value.length > 20 || oUeam.value.length < 6) {
+  oError.innerHTML = "请输入邮箱"
+  isError = false;
+  return;
+ }
+ window.location.href="1.html";
+}</script>
     </body>
-
 </html>
