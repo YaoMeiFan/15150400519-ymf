@@ -11,11 +11,7 @@
         *{margin: 0;padding: 0;}
 		a{text-decoration: none;display: none;}
     
-    .btn{
-			width: 50px;
-			height: 30px;
-            padding: 2px;
-        }
+   
         .btn1{
             width: 50px;
 			height: 30px;
@@ -44,6 +40,16 @@
 			display: none;
 		}
         .msg_blck2{
+			width: 100%;
+			height: 100%;
+			/*opacity: 0.5;继承*/
+			background: rgba(0,0,0,0.5);
+			position: fixed;
+			top: 0px;
+			left: 0px;
+			display: none;
+		}
+         .msg_blck3{
 			width: 100%;
 			height: 100%;
 			/*opacity: 0.5;继承*/
@@ -87,6 +93,17 @@
 			background: #fff;
 			text-align: center;
 		}
+         .msg_cont3{
+			width: 1000px;
+			height: 1000px;
+			position: absolute;
+			left: 50%;
+			top: 50%;
+			margin-top: -350px;
+			margin-left: -450px;
+			background: #fff;
+			text-align: center;
+		}
 
 		.closeBtn{
 			display: block;
@@ -103,6 +120,13 @@
 			color: #aaa;
 		}
         .closeBtn2{
+			display: block;
+			margin-left: 950px;
+			margin-top: 10px;
+			font-size: 30px;
+			color: #aaa;
+		}
+         .closeBtn3{
 			display: block;
 			margin-left: 950px;
 			margin-top: 10px;
@@ -140,8 +164,6 @@
         <section id="whatwedo" class="whatwedo sectioner clearfix">
             <h1 class="sectionHeader">图书管理系统&nbsp;&nbsp;&nbsp;&nbsp;</h1><button class="btn1" onclick="javascrtpt:window.location.href='2.html'">登录</button>
             <button class="btn2" onclick="javascrtpt:window.location.href='2.html'">注册</button>
-            
-            
             <article class="whatwedo-item front-end">
             <div class="layout">
                 <i class="icon"></i>
@@ -168,7 +190,7 @@
                 <i class="icon"></i>
                 <div class="txt">
                 <h3><font color="#fff" size="5px">当前图书&nbsp;&nbsp;</font>
-                    <button class="btn">删除</button></h3>
+                    <button class="btn5">删除</button></h3>
                    
                 </div>
                 </div>
@@ -296,6 +318,34 @@
 	</div>
         
         
+                <div class="msg_blck3">
+		<div class="msg_cont3">
+			<a class="closeBtn3" href="#">X</a>
+            
+		<table border="1" cellspacing="0" cellpadding="">
+			
+            
+			<tbody>
+			<tr>
+            <td>《HTML5和CSS3权威指南》</td>   
+            <td>陆凌牛</td>
+            <td>300</td>
+            <td>机械工业出版社区</td>
+            <td>35￥</td>
+				<td>
+					<button id="deleatUser" class="but">删除</button>
+				</td>
+			</tr>
+			</tbody>
+            
+		</table>
+            
+			
+		</div>
+
+	</div>
+        
+        
         
         <div class="msg_blck">
 		<div class="msg_cont">
@@ -358,6 +408,7 @@
 
 </script>
     
+        
      
   <script type="text/javascript">
    //发表留言事件
@@ -367,6 +418,21 @@
 	//	//关闭按钮
 	$(".closeBtn2").click(function(){
 		$(".msg_blck2").hide(500);
+	})
+	$("li a").click(function(){
+		$(this).parent().parent().remove();
+	})
+
+</script>       
+        
+    <script type="text/javascript">
+   //发表留言事件
+	$(".btn5").click(function(){
+		$(".msg_blck3").show(500);
+	})
+	//	//关闭按钮
+	$(".closeBtn3").click(function(){
+		$(".msg_blck3").hide(500);
 	})
 	$("li a").click(function(){
 		$(this).parent().parent().remove();
